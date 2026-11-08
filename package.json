@@ -1,0 +1,23 @@
+{
+  "name": "sheikh-students",
+  "version": "1.1.0",
+  "description": "موقع متابعة حفظ طلاب الشيخ، بقسمين منفصلين للأولاد والبنات",
+  "main": "src/server.js",
+  "private": true,
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "frontend:dev": "python3 -m http.server 5500 --bind 127.0.0.1 --directory public",
+    "test": "node --test --test-concurrency=1",
+    "lint": "node --check src/server.js && node --check src/app.js && node --check src/config/migrate.js && node --check src/config/db.js && node --check src/controllers/session.controller.js && node --check src/controllers/field.controller.js && node --check src/controllers/report.controller.js && node --check src/controllers/student.controller.js && node --check src/controllers/meta.controller.js && node --check src/middlewares/error.middleware.js && node --check src/middlewares/host.middleware.js && node --check src/middlewares/cors.middleware.js && node --check src/models/session.model.js && node --check src/models/student.model.js && node --check src/models/field.model.js && node --check src/models/counter.model.js && node --check src/models/schema-migration.model.js && node --check src/utils/fields.js && node --check src/utils/validate.js && node --check public/js/config.js && node --check public/js/api.js && node --check public/js/dashboard.js && node --check public/js/fields.js && node --check public/js/session-details.js && node --check public/js/session-report.js && node --check public/js/sessions.js && node --check public/js/students.js && node --check tests/cors.test.js && node --check tests/api.test.js && node --check tests/security.test.js && node --check tests/validate.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "mongoose": "^8.9.0"
+  }
+}
